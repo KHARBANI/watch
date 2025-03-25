@@ -1,0 +1,188 @@
+.section_1 * {
+    font-family: Nunito, sans-serif;
+  }
+  
+  .section_1 .responsive-container-block {
+    min-height: 75px;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    justify-content: flex-start;
+  }
+  
+  .section_1 a {
+    text-decoration-line: none;
+    text-decoration-thickness: initial;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    color: inherit;
+  }
+  
+  .section_1 .text-blk {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    line-height: 25px;
+  }
+  
+  .section_1 .responsive-container-block.container {
+    max-width: 1320px;
+    min-height: 600px;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+    margin-right: auto;
+    margin-bottom: 60px;
+    margin-left: auto;
+    position: relative;
+  }
+  
+  .section_1 .responsive-container-block.big-container {
+    padding-top: 0px;
+    padding-right: 50px;
+    padding-bottom: 0px;
+    padding-left: 50px;
+    position: relative;
+    background-color: black;
+  }
+  
+  .section_1 .text-blk.section-title {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 34px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+  }
+  
+  .section_1 .text-blk.section-headtext {
+    font-size: 50px;
+    line-height: 68px;
+    font-weight: 800;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin: 0 0 0 0;
+  }
+  
+  .section_1 .text-blk.section-subheadtext {
+    font-size: 25px;
+    line-height: 34px;
+    max-width: 500px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+    font-weight: 700;
+    margin: 10px 0 50px 0;
+  }
+  
+  .section_1 .button {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    background-color: #b062ff;
+    padding-top: 15px;
+    padding-right: 55px;
+    padding-bottom: 15px;
+    padding-left: 55px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-top-color: white;
+    border-right-color: white;
+    border-bottom-color: white;
+    border-left-color: white;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+  }
+  
+  .section_1 .content-text {
+    color: white;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .section_1 .landing-img {
+    position: absolute;
+    width: 100%;
+    opacity: 0.5;
+    background-color: black;
+    height: 100%;
+    left: 0px;
+    right: 0px;
+    object-fit: cover;
+  }
+  
+  .section_1 .swiper-container-horizontal&gt;
+  
+  .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-top: 0px;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+    height: 15px;
+    width: 15px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: #d97a0b;
+  }
+  
+  .section_1 .section-headtext {
+    margin: 0 0 0 0;
+  }
+  
+  @media (max-width: 768px) {
+    .section_1 .text-blk.section-headtext {
+      font-size: 40px;
+      line-height: 55px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .section_1 .responsive-container-block.big-container {
+      padding-top: 0px;
+      padding-right: 20px;
+      padding-bottom: 0px;
+      padding-left: 20px;
+    }
+  
+    .section_1 .responsive-container-block.container {
+      text-align: center;
+    }
+  
+    .section_1 .text-blk.section-headtext {
+      font-size: 35px;
+      line-height: 47px;
+    }
+  }

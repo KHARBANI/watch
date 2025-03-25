@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Brands</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="brand.css">
+    <style>
+        /* Sidebar for Filters */
+        .filter-sidebar {
+            position: sticky;
+            top: 20px;
+            width: 100px;
+            padding: 20px;
+            background-color:black;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+
+        .filter-sidebar h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: white;
+        }
+
+        .filter-sidebar button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .filter-sidebar .dropdown-content {
+            display: none;
+            margin-top: 5px;
+        }
+
+        .filter-sidebar .dropdown-content label {
+            display: block;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .filter-sidebar .dropdown-content input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        /* Main Content */
+        .brand-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .brand {
+            width: calc(33.33% - 20px);
+            text-align: center;
+        }
+
+        .brand img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .brand {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Watch Brands</h1>
+        <img src="website image/all.png" alt="" style="background-color: black; align-items: center; height: 350px;">
+    </header>
+
+    <main>
+        <section class="brand-selection">
+            <div class="container">
+                <!-- Sidebar for Filters -->
+                <aside class="filter-sidebar">
+                    <h3>Filters</h3>
+
+                    <!-- Brand Filter -->
+                    <button onclick="toggleDropdown('brand')">Brand ▼</button>
+                    <div id="brand" class="dropdown-content">
+                        <label><input type="checkbox" name="brand" value="casio"> Casio</label>
+                        <label><input type="checkbox" name="brand" value="calvin"> Calvin</label>
+                        <label><input type="checkbox" name="brand" value="balmain"> Balmain</label>
+                        <label><input type="checkbox" name="brand" value="coach"> Coach</label>
+                        <label><input type="checkbox" name="brand" value="aigner"> Aigner</label>
+                        <label><input type="checkbox" name="brand" value="boss"> Boss</label>
+                        <label><input type="checkbox" name="brand" value="armani"> Armani</label>
+                    </div>
+
+                    <!-- Type Filter -->
+                    <button onclick="toggleDropdown('type')">Type ▼</button>
+                    <div id="type" class="dropdown-content">
+                        <label><input type="checkbox" name="type" value="watch-rings"> Watch Rings</label>
+                        <label><input type="checkbox" name="type" value="mechanical-watches"> Mechanical Watches</label>
+                        <label><input type="checkbox" name="type" value="leather-watches"> Leather Watches</label>
+                        <label><input type="checkbox" name="type" value="stainless-steel-watches"> Stainless Steel Watches</label>
+                    </div>
+
+                    <!-- Gender Filter -->
+                    <button onclick="toggleDropdown('gender')">Gender ▼</button>
+                    <div id="gender" class="dropdown-content">
+                        <label><input type="checkbox" name="gender" value="male"> Male</label>
+                        <label><input type="checkbox" name="gender" value="female"> Female</label>
+                    </div>
+                </aside>
+
+                <!-- Brand Gallery -->
+                <section class="brand-gallery">
+                    <div class="brand" data-brand="armani" data-type="watch-rings" data-gender="male">
+                        <a href="armani.html">
+                            <img src="website image/AX_brand_thumbnail.jpg" alt="Armani Exchange">
+                        </a>
+                        <h3>Armani Exchange</h3>
+                    </div>
+                    <div class="brand" data-brand="balmain" data-type="mechanical-watches" data-gender="female">
+                        <a href="balmain.html">
+                            <img src="website image/Balmain.jpg" alt="Balmain">
+                        </a>
+                        <h3>Balmain</h3>
+                    </div>
+                    <div class="brand" data-brand="casio" data-type="stainless-steel-watches" data-gender="male">
+                        <a href="casio.html">
+                            <img src="website image/Casio.jpg" alt="Casio">
+                        </a>
+                        <h3>Casio</h3>
+                    </div>
+                    <div class="brand" data-brand="aigner" data-type="leather-watches" data-gender="female">
+                        <a href="Aigner.html">
+                            <img src="Aigner-Banner.jpg" alt="Aigner-Banner">
+                        </a>
+                        <h3>Aigner-Banner</h3>
+                    </div>
+                    <div class="brand" data-brand="amazefit" data-type="smart-watches" data-gender="male">
+                        <a href="AMAZEFIT.HTML">
+                            <img src="Amazefit.jpg" alt="Amazefit">
+                        </a>
+                        <h3>Amazefit</h3>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Watch Brands. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle Dropdown Functionality
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Dynamic Filtering
+        document.querySelectorAll('.filter-sidebar input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', applyFilters);
+        });
+
+        function applyFilters() {
+            const selectedBrands = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(cb => cb.value);
+            const selectedTypes = Array.from(document.querySelectorAll('input[name="type"]:checked')).map(cb => cb.value);
+            const selectedGenders = Array.from(document.querySelectorAll('input[name="gender"]:checked')).map(cb => cb.value);
+
+            document.querySelectorAll('.brand').forEach(brand => {
+                const brandName = brand.dataset.brand;
+                const brandType = brand.dataset.type;
+                const brandGender = brand.dataset.gender;
+
+                const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(brandName);
+                const matchesType = selectedTypes.length === 0 || selectedTypes.includes(brandType);
+                const matchesGender = selectedGenders.length === 0 || selectedGenders.includes(brandGender);
+
+                if (matchesBrand && matchesType && matchesGender) {
+                    brand.style.display = 'block';
+                } else {
+                    brand.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

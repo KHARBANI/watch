@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Brands</title>
+    <link rel="stylesheet" href="brand.css">
+    <style>
+        /* Add some basic styles for hiding and showing brands */
+        .brand {
+            display: all; /* Hide all brands by default */
+        }
+        .brand.visible {
+            display: block; /* Show brands that are marked as visible */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Watch Brands</h1>
+        <img src="website image/all.png" alt="" style="background-color: black; align-items: center; height: 350px;">
+    </header>
+
+    <main>
+        <section class="brand-selection">
+            <h2>Select a Brand</h2>
+            <div id="brand_category">
+                <a href="brand.html" onclick="showAll()">All</a>
+                <a href="Aigner.html" onclick="showSwiss()" >Swiss</a>
+                <a href="balmain.html" onclick="showSwiss()" >Swiss</a>
+                <a href="#" onclick="showPremium()">Premium</a>
+                <a href="#" onclick="showFashion()">Fashion</a>
+                <a href="#" onclick="showSmart()">Smart</a>
+            </div>
+        </section>
+
+        <section class="brand-gallery-All">
+            <div class="brand" id="brand1">
+                <a href="armani.html">
+                    <img src="website image/AX_brand_thumbnail.jpg" alt="Brand 1">
+                </a>
+                <h3>Armani Exchange</h3>
+            </div>
+            <div class="brand" id="brand2">
+                <a href="balmain.html">
+                    <img src="website image/Balmain.jpg" alt="Brand 2">
+                </a>
+                <h3>Balmain</h3>
+            </div>
+            <div class="brand" id="brand3">
+                <a href="BOSS.HTML">
+                    <img src="Boss (1).jpg" alt="Brand 3">
+                </a>
+                <h3>Boss</h3>
+            </div>
+            <div class="brand" id="brand4">
+                <img src="website image/brand_thumbnail.jpg" alt="Brand 4">
+                <h3>Cerruti 1881</h3>
+            </div>
+            <div class="brand" id="brand5">
+                <a href="CALVIN.HTML">
+                    <img src="website image/calvinklein.jpg" alt="Brand 5">
+                </a>
+                <h3>Calvinklein</h3>
+            </div>
+            <div class="brand" id="brand6">
+                <a href="casio.html">
+                    <img src="website image/Casio.jpg" alt="Brand 6">
+                </a>
+                <h3>Casio</h3>
+            </div>
+            <div class="brand" id="brand7">
+                <a href="citizen.html">
+                    <img src="website image/Citizen.jpg" alt="Brand 7">
+                </a>
+                <h3>Citizen</h3>
+            </div>
+            <div class="brand" id="brand8">
+                <a href="COACH.HTML">
+                    <img src="website image/Coach.jpg" alt="Brand 8">
+                </a>
+                <h3>Coach</h3>
+            </div>
+            <div class="brand" id="brand9">
+                <a href="Aigner.html">
+                    <img src="Aigner-Banner.jpg" alt="Brand 9">
+                </a>
+                <h3>Aigner-Banner</h3>
+            </div>
+            <div class="brand" id="brand10">
+                <a href="AMAZEFIT.HTML">
+                    <img src="Amazefit.jpg" alt="Brand 10">
+                </a>
+                <h3>Amazefit</h3>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Dropdown</button>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Watch Brands. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showAll() {
+            const brands = document.querySelectorAll('.brand');
+            brands.forEach(brand => {
+                brand.classList.add('visible');
+            });
+        }
+
+        function showSwiss() {
+            const brands = document.querySelectorAll('.brand');
+            brands.for
+        }

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Selection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .checkbox-label {
+            display: block;
+            padding: 8px;
+        }
+
+        #filterIcon {
+            cursor: pointer;
+            font-size: 30px; /* Adjust size as needed */
+            margin-bottom: 20px;
+            color: black; /* Change color as needed */
+        }
+
+        .filter-container {
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <i id="filterIcon" class="fa-solid fa-filter" onclick="toggleFilters()"></i>
+
+    <div class="filter-container">
+        <div class="dropdown">
+            <button>Brand ▼</button>
+            <div class="dropdown-content">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="brand" value="casio"> Casio
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="brand" value="calvin"> Calvin
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="brand" value="balmain"> Balmain
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="brand" value="Coach"> Coach
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="brand" value="Aigner"> Aigner
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="brand" value="Calvin"> Calvin
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="brand" value="Boss"> Boss
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="brand" value="Armani"> Armani
+                </label>
+                <!-- Add more brands as needed -->
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>Type ▼</button>
+            <div class="dropdown-content">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Type" value="Watch Rings">Watch Rings
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Type" value="Mechanical Watches">Mechanical Watches
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Type" value="Leather Watches">Leather Watches
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Type" value="Stainless Steel Watches">Stainless Steel Watches
+                </label>
+                <!-- Add more brands as needed -->
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>Gender ▼</button>
+            <div class="dropdown-content">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Gender" value="Male">Male
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Gender" value="Female">Female
+                </label>
+                <!-- Add more brands as needed -->
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>Dial Thickness ▼</button>
+            <div class="dropdown-content">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Dial Thickness" value="0-5 MM">0-5 MM
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Dial Thickness" value="6-10 MM">6-10 MM
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Dial Thickness" value="11-15 MM">11-15 MM
+                </label>
+                <!-- Add more brands as needed -->
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>Strap Material ▼</button>
+            <div class="dropdown-content">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="18 Karat Gold" value="18 Karat Gold">18 Karat Gold
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Alloy" value="Alloy">Alloy
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Brass" value="Brass">Brass
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="StainLess Steel" value="StainLess Steel">StainLess Steel
+                </label>
+                <!-- Add more brands as needed -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFilters() {
+            const filterContainer = document.querySelector('.filter-container');
+            filterContainer.style.display = filterContainer.style.display === 'none' || filterContainer.style.display === '' ? 'block' : 'none';
+        }
+    </script>
+
+</body>
+</html>

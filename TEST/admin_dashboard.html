@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../CSS/admin_dashboard.css">
+</head>
+<body>
+    <!-- Navigation panel -->
+    <header>
+        <h1><a href="admin_dashboard.php">ADMIN DASHBOARD</a></h1>
+    </header>
+    <nav>
+        <a href="admin_dashboard.php">Dashboard</a>
+        <div class="dropdown-setting">
+            <a>Manage Users</a>
+            <div class="dropdown-content-setting">
+                <a href="admin_manage_customer.html">Customer</a>
+                <a href="admin_manage_dealer.html">Dealer</a>
+            </div>
+        </div>
+        <a href="admin_manage_category.php">Manage Category</a>
+        <a href="admin_view_products.php">View Products</a>
+        <a href="admin_view_payments.php">View Payments</a>
+        <a href="admin_view_orders.php">View Orders</a>
+        <a href="admin_view_reviews.php">View Reviews</a>
+        <div class="dropdown-setting">
+            <a>Access</a>
+            <div class="dropdown-content-setting">
+                <a href="../PHP/logout.php">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main>
+        <section class="dashboard-overview">
+            <h2>Overview</h2>
+            <div class="overview-cards">
+                <div class="card">
+                    <h3>Total Users</h3>
+                    <p>6</p>
+                </div>
+                <div class="card">
+                    <h3>Total Categories</h3>
+                    <p>2</p>
+                </div>
+                <div class="card">
+                    <h3>Total Products</h3>
+                    <p>2</p>
+                </div>
+                <div class="card">
+                    <h3>Total Orders</h3>
+                    <p>3</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modern Recent Activity Section -->
+        <section class="recent-activity">
+            <h2>Recent Activity</h2>
+            <div class="activity-cards">
+                <div class="activity-card">
+                    <h3>Recently Added Products</h3>
+                    <table>
+                        <tr>
+                            <th>Product Id</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Amazefit GTS 4 Mini</td>
+                            <td>7999</td>
+                            <td>10</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="activity-card">
+                    <h3>Recent Payments</h3>
+                    <table>
+                        <tr>
+                            <th>Payment Id</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>10000</td>
+                            <td>30-01-2025</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="activity-card">
+                    <h3>Recent Reviews</h3>
+                    <table>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Rating</th>
+                            <th>Comment</th>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Balmain</td>
+                            <td>5</td>
+                            <td>Great Product!</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Admin Dashboard. All rights reserved.</p>
+    </footer>
+</body>
+</html>

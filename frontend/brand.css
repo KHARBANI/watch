@@ -1,0 +1,145 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*Header*/
+
+header {
+    background-color:#333;
+    color: #fff;
+    padding: 1px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0.1;
+}
+
+header h1 a{
+    text-decoration: none;
+    color: #fff;
+    font-size:2rem;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+header h1 a:hover{
+    color:#00bcd4;
+}
+
+
+button {
+    padding: 15px 30px; /* Increase padding for a larger button */
+    font-size: 18px; /* Increase font size */
+    color: #fff;
+    background-color: #007BFF; /* Change background color to blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+
+.brand-selection {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#brand_category {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    word-spacing: 160px;
+    font-size: 25px;
+    font-style: normal;
+    align-items: center;
+    background: white;
+}
+
+#brand_category tr {
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.brand-gallery-All {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.brand-gallery-Aigner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.brand-gallery-BALMAIN {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.brand-gallery-Armani {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.brand-gallery-CASIO {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.brand-gallery-BOSS {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.brand-gallery-CALVIN-KLEIN {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.brand-gallery-CITIZEN {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.brand-gallery-COACH {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.brand-gallery-AMAZEFIT {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.brand {
+    margin: 10px;
+    text-align: center;
+}
+
+.brand img {
+    width: 318px;
+    height: 356px; /* Maintain aspect ratio */
+    border: 1px solid black; /* Optional: Add a border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    display: flex;
+
+    
+
+}
+img:hover{
+    opacity: 0.5;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+}

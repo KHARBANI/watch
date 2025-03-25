@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../CSS/index.css">
+    <style>
+
+        /* Product Container */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Product Image */
+        #product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        #product-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Product Details */
+        #product-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #product-price {
+            font-size: 1.5rem;
+            color: #ff5722;
+            margin-bottom: 20px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #ff5722;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #e64a19;
+        }
+
+        /* Product Description */
+        .product-description {
+            margin-top: 20px;
+        }
+
+        .description-part p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .specifications-part {
+            margin-top: 10px;
+            max-height: auto;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .specifications-part.active {
+            max-height: 500px; /* Adjust based on content */
+        }
+
+        .see-more {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .see-more:hover {
+            background-color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><a href="index.html">SRS WATCHSTORE</a></h1>
+    </header>
+    <nav>
+        <a href="../HTML/index.html">Home</a>
+        <a href="../HTML/about.html">About</a>
+        <a href="../HTML/contact.html">Contact</a>
+        <div class="dropdown">
+            <a>Shop</a>
+            <div class="dropdown-content">
+                <a href="#men">Men</a>
+                <a href="#women">Women</a>
+                <a href="#sport">Sport</a>
+                <a href="#fashion">Fashion</a>
+                <a href="#brand">Brand</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Section -->
+    <div class="container">
+        <img id="product-image" src="A2.jpg" alt="Product Image">
+        <div>
+            <h1 id="product-title">Amazfit<br>Unisex | GTS 4 Mini</h1>
+            <p id="product-price">₹7,999</p>
+            <button type="submit">Buy Now</button>
+
+            <div id="product-description" class="product-description">
+                <div class="description-part">
+                    <p>
+                        Elevate your style with the Amazfit GTS 4 Mini smartwatch. Featuring a sleek square dial in black with a rose gold accent, this timepiece combines modern technology with elegance. Encased in durable alloy and protected by Gorilla Glass, it ensures reliability and sophistication. The silicon strap adds comfort, making it perfect for casual or sporty occasions.
+                    </p>
+                </div>
+                <div class="specifications-part">
+                    <strong>Watch Glass/Crystal:</strong> Gorilla Glass<br>
+                    <strong>Movement:</strong> Digital<br>
+                    <strong>Warranty Time Period:</strong> 12 Months<br>
+                    <strong>Water Resistance:</strong> 50 m<br>
+                    <strong>Hand Type:</strong> 3-Hand<br>
+                    <strong>Style:</strong> Casual<br>
+                    <strong>Occasion:</strong> Sport<br>
+                    <strong>Band Style:</strong> Strap<br>
+                    <strong>Case Material:</strong> Alloy<br>
+                    <strong>Gender:</strong> Unisex<br>
+                    <strong>Special Features:</strong> GPS, Heart Rate Monitor, Notifications, Sleep Monitor, Camera, Music Player, Oxymeter (SpO2), Time Display<br>
+                    <strong>Watch Combo Availability:</strong> Strap<br>
+                    <strong>Brand:</strong> Amazfit<br>
+                    <strong>Collection Name:</strong> GTS 2 Mini Series<br>
+                    <strong>Country of Origin:</strong> China<br>
+                    <strong>Manufactured by:</strong> Anhui Huami Information Technology Co., Ltd, Room 1201, Building A4, National Animation Industry Base, No. 800 Wangjiang West Road<br>
+                    <strong>Imported By:</strong> PR Innovations Pvt. Ltd., Ground floor, P-103, Pandav Nagar, Mayur Vihar, Phase-I, East Delhi, Delhi-110091<br>
+                    <strong>Global Identifier Value:</strong> 6972596105251<br>
+                    <strong>Global Identifier Type:</strong> EAN<br>
+                    <strong>Dial:</strong><br>
+                    <strong>Dial Shape:</strong> Square<br>
+                    <strong>Dial Colour:</strong> Black<br>
+                    <strong>Secondary Dial Color:</strong> Rose Gold<br>
+                    <strong>Dial Type:</strong> Smart<br>
+                    <strong>Dial Diameter [mm]:</strong> 42 MM<br>
+                    <strong>Dial Thickness [mm]:</strong> 12 mm<br>
+                    <strong>Strap:</strong><br>
+                    <strong>Strap Color:</strong> Black<br>
+                    <strong>Secondary Strap Color:</strong> Gold<br>
+                    <strong>Strap Material:</strong> Silicon<br>
+                    <strong>Strap Width [mm]:</strong> 22 MM<br>
+                    <strong>Care Instruction:</strong> Vibe the watch after use and keep an eye on the battery.
+                </div>
+                <button id="see-more" class="see-more">See More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <h2 style="text-align: center;">Watch Store</h2>
+        <p style="text-align: center;"> 2024 Watch Store. All rights reserved.</p>
+        <div class="quick-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+        </div>
+    </div>
+    <div style="margin-top: 30px;" class="footer-details">
+        <span style="margin-left: 100px;">Contact No:</strong> (+91) 9876543210</span>
+        <span style="margin-left: 80px;">|</span>
+        <span style="margin-left: 80px;"><strong>Location:</strong>&nbsp;  St. Xavier's College Ahmedabad, Navrangpura, Gujarat - 390009</span>
+        <span style="margin-left: 60px;">|</span>
+        <span style="margin-left: 80px;"><strong>Email:</strong> <a href="mailto:info@watchstore.com">info@watchstore.com</a></span>
+    </div>
+    <div style="margin-top: 30px;">
+        
+    </div>
+</footer>
+
+    <script>
+        // Toggle Specifications
+        const seeMoreButton = document.getElementById('see-more');
+        const specificationsPart = document.querySelector('.specifications-part');
+
+        seeMoreButton.addEventListener('click', () => {
+            specificationsPart.classList.toggle('active');
+            seeMoreButton.textContent = specificationsPart.classList.contains('active') ? 'See Less' : 'See More';
+        });
+    </script>
+</body>
+</html>

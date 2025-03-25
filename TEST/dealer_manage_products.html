@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Manage Products</title>
+    <link rel="stylesheet" href="../CSS/admin_dashboard.css">
+    <link rel="stylesheet" href="../CSS/dealer_dashboard.css">
+    <script src="../JAVA SCRIPT/dealer_manage_products.js"></script>
+    <script src="../JAVA SCRIPT/dealer_dashboard.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a href="dealer_dashboard.html">DEALER DASHBOARD</a></h1>
+    </header>
+    <nav>
+        <a href="dealer_dashboard.php">Dashboard</a>
+        <a href="dealer_manage_products.php">Manage Product</a>
+        <a href="dealer_view_categories.php">View Category</a>
+        <a href="dealer_manage_orders.php">Manage Order</a>
+        <a href="dealer_view_payments.php">View Payment</a>
+        <a href="dealer_view_reviews.php">View Review</a>
+        <div class="dropdown-setting">
+            <a>Access</a>
+            <div class="dropdown-content-setting">
+                <a href="../PHP/logout.php">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="manage-products" role="region" aria-labelledby="manage-products-heading">
+            <h1 id="manage-products-heading">Manage Products</h1>
+            <div class="filter-container">
+                <input type="text" id="productFilter" placeholder="Filter products by name" aria-label="Product filter">
+                <input type="number" id="minPriceFilter" placeholder="Min Price" aria-label="Minimum price filter">
+                <input type="number" id="maxPriceFilter" placeholder="Max Price" aria-label="Maximum price filter">
+                <select id="stockFilter" aria-label="Stock filter">
+                    <option value="" disabled selected hidden>Stock</option>
+                    <option value="">All</option>
+                    <option value="0">Out of Stock</option>
+                    <option value="1">In Stock</option>
+
+                </select>
+            </div>
+            <button id="addProductBtn" aria-label="Add Product" onclick="openAddProductModal()">Add Product</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody">
+                    <tr>
+                        <td>1</td>
+                        <td>Amazefit Unisex GTS 4 Mini</td>
+                        <td>Amazefit</td>
+                        <td>10000</td>
+                        <td>10</td>
+                        <td>
+                            <button class="action-btn view-btn" onclick="viewProduct(1)" aria-label="View Balmain product">View</button>
+                            <button class="action-btn edit-btn" onclick="editProduct(1)" aria-label="Edit Balmain product">Edit</button>
+                            <button class="action-btn delete-btn" onclick="toggleProductStatus(1)" aria-label="Toggle Balmain product status">Deactivate</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Amazefit POR 3R</td>
+                        <td>Amazefit</td>
+                        <td>20000</td>
+                        <td>20</td>
+                        <td>
+                            <button class="action-btn view-btn" onclick="viewProduct(2)" aria-label="View Aigner product">View</button>
+                            <button class="action-btn edit-btn" onclick="editProduct(2)" aria-label="Edit Aigner product">Edit</button>
+                            <button class="action-btn delete-btn" onclick="toggleProductStatus(2)" aria-label="Toggle Aigner product status">Deactivate</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Admin Dashboard. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal for Add Product -->
+    <div id="addProductModal" class="modal" role="dialog" aria-labelledby="add-product-title" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddProductModal()" aria-label="Close modal">&times;</span>
+            <h2 id="add-product-title">Add Product</h2>
+            <form id="addProductForm">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" required>
+                <label for="image">Image:</label>
+                <input type="file" id="image" required>
+                <label for="productPrice">Price:</label>
+                <input type="number" id="productPrice" required>
+                <label for="caseMaterial">Case Material:</label>
+                <select name="" id="">
+                    <option value="1">Stainless Steel</option>
+                    <option value="2">Titanium</option>
+                    <option value="3">Plastic</option>
+                    <option value="4">Aluminium</option>
+                </select>
+                <label for="strapMaterial">Strap Material</label>
+                <select name="" id="">
+                    <option value="1">Leather</option>
+                    <option value="2">Rubber</option>
+                    <option value="3">Metal</option>
+                    <option value="4">Plastic</option>
+                </select>
+                <label for="movementType">Movement Type:</label>
+                <select name="" id="">
+                    <option value="1">Quartz</option>
+                    <option value="2">Mechanical</option>
+                    <option value="3">Digital</option>
+                </select>
+                <label for="productStock">Stock:</label>
+                <input type="number" id="productStock" required>
+                <button type="submit" aria-label="Submit new product">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Editing Product -->
+    <div id="editProductModal" class="modal" role="dialog" aria-labelledby="edit-product-title" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditProductModal()" aria-label="Close modal">&times;</span>
+            <h2 id="edit-product-title">Edit Product</h2>
+            <form id="editProductForm">
+                <label for="editProductName">Product Name:</label>
+                <input type="text" id="editProductName" required>
+                <label for="editProductCategory">Category:</label>
+                <input type="text" id="editProductCategory" required>
+                <label for="editProductPrice">Price:</label>
+                <input type="number" id="editProductPrice" required>
+                <label for="editProductStock">Stock:</label>
+                <input type="number" id="editProductStock" required>
+                <button type="submit" aria-label="Submit edited product">Edit Product</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Product information -->
+    <div id="modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" onclick="closeInfoModal()" aria-label="Close modal">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Watch Store</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <script src="../JAVA SCRIPT/script.js"></script>
+</head>
+<body>
+    <!--Navigation panel-->
+    <header>
+        <h1><a href="index.html">SRS WATCHSTORE</a></h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="dropdown">
+            <a>Shop</a>
+            <div class="dropdown-content">
+                <!--<a href="#men">Men</a>
+                <a href="#women">Women</a>
+                <a href="#sport">Sport</a>
+                <a href="#fashion">Fashion</a>-->
+                <a href="../frontend/brand.html">Brand</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a>Setting</a>
+            <div class="dropdown-content">
+                <a onclick="openLoginPopup()">Login</a>
+                <a onclick="openRegisterPopup()">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2 style="text-align: center;">About Us</h2>
+        <p style="margin-left: 100px; margin-right: 100px; text-align: justify; margin-top: 50px;">
+            At SRS Watchstore, we create watches that combine timeless design with exceptional quality.Our goal is 
+            to offer stylish and reliable timepieces that complement your individuality and fit seamlessly into your lifestyle.
+        </p>
+        <p style="margin-left: 100px; margin-right: 100px; text-align: justify; margin-bottom: 100px;">
+            Every watch in our collection is crafted with precision and care, ensuring a perfect blend of elegance 
+            and functionality. Whether you're dressing up for a special occasion or adding a touch of sophistication 
+            to your everyday look, SRS Watchstore has the perfect watch for you.
+            Discover the art of timekeeping with SRS Watchstore—where every moment matters.
+        </p>
+    </section>
+    <div style="margin-top: 190px;">
+        <pre> </pre>
+    </div>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <h2 style="text-align: center;">Watch Store</h2>
+        <p style="text-align: center;"> 2024 Watch Store. All rights reserved.</p>
+        <div class="quick-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+        </div>
+    </div>
+    <div style="margin-top: 30px;" class="footer-details">
+        <span style="margin-left: 100px;">Contact No:</strong> (+91) 9876543210</span>
+        <span style="margin-left: 80px;">|</span>
+        <span style="margin-left: 80px;"><strong>Location:</strong>&nbsp;  St. Xavier's College Ahmedabad, Navrangpura, Gujarat - 390009</span>
+        <span style="margin-left: 60px;">|</span>
+        <span style="margin-left: 80px;"><strong>Email:</strong> <a href="mailto:info@watchstore.com">info@watchstore.com</a></span>
+    </div>
+    <div style="margin-top: 30px;">
+        
+    </div>
+</footer>
+
+<!-- Modern Login Popup Form -->
+<div id="loginPopup" class="login-popup">
+    <div class="login-content">
+        <h2>Welcome Back</h2>
+        <p>Login to your account</p>
+        <form action="../PHP/login.php" method="POST">
+            <div class="input-group">
+                <label for="loginEmailUnique">Email</label>
+                <input type="text" id="loginEmailUnique" name="email" placeholder="Enter your email" autocomplete="email">
+            </div>
+            <div class="input-group">
+                <label for="loginPasswordUnique">Password</label>
+                <input type="password" id="loginPasswordUnique" name="password" placeholder="Enter your password" autocomplete="current-password">
+            </div>
+            <div class="button-group">
+                <button type="submit" class="login-btn">Login</button>
+                <button type="button" class="cancel-btn" onclick="closeLoginPopup()">Cancel</button>
+            </div>
+            <p class="signup-link">Don't have an account? <a href="#register" onclick="openRegisterPopup()">Register now</a></p>
+        </form>
+    </div>
+</div>
+
+<!-- Registration Popup Form -->
+<div id="registerPopup" class="register-popup">
+    <div class="register-content">
+        <h2>Register Now</h2>
+        <p>Create a new account</p>
+        <form action="../PHP/register.php" method="post">
+            <div class="input-group">
+                <label for="nameUnique">Name</label>
+                <input type="text" id="nameUnique" name="name" placeholder="Enter your Name" >
+            </div>
+            <div class="input-group">
+                <label for="registerEmailUnique">Email</label>
+                <input type="text" id="registerEmailUnique" name="email" placeholder="Enter your email"  autocomplete="email">
+            </div>
+            <div class="input-group">
+                <label for="phoneUnique">Phone Number</label>
+                <input type="tel" id="phoneUnique" name="phone" placeholder="Enter your phone number" >
+            </div>
+            <div class="input-group">
+                <label for="registerPasswordUnique">Password</label>
+                <input type="password" id="registerPasswordUnique" name="password" placeholder="Enter your password" autocomplete="new-password">
+            </div>
+            <div class="input-group">
+                <label for="registerConfirmPasswordUnique">Confirm Password</label>
+                <input type="password" id="registerConfirmPasswordUnique" name="confirmPassword" placeholder="Confirm your password"  autocomplete="new-password">
+            </div>
+            <div class="button-group">
+                <button type="submit" class="register-btn">Register</button>
+                <button type="button" class="cancel-btn" onclick="closeRegisterPopup()">Cancel</button>
+            </div>
+            <p class="signup-link">Already a registered user? <a href="#register" onclick="openLoginPopup()">Login now</a></p>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+<!--La-->

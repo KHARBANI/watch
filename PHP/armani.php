@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armani</title>
+    <link rel="stylesheet" href="../CSS/brand.css">
+    <link rel="stylesheet" href="../CSS/index.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">SRS WATCHSTORE</a></h1>
+    </header>
+    <nav>
+        <a href="../HTML/index.html">Home</a>
+        <a href="../HTML/about.html">About</a>
+        <a href="../HTML/contact.html">Contact</a>
+        <div class="dropdown">
+            <a>Shop</a>
+            <div class="dropdown-content">
+                <a href="../frontend/brand.html">Brand</a>
+            </div>
+        </div>
+    </nav>
+
+        <img  src="../IMAGES/all.png" alt=""  style="background-color: black; align-items: center; height: 400px; width: 100%;">
+    
+        <main>
+        <section class="brand-selection">
+            <h2>ARMANI</h2>
+            <div id="brand_category">
+            <tr>All</tr>
+            <tr>Swiss</tr>
+            <tr>Premium</tr>
+            <tr>Fashion</tr>
+            <tr>Smart</tr>
+            </div>
+    
+        <section class="brand-gallery">
+        
+                
+            <div class="brand" id="brand1">
+                <a href="../HTML/armani1.html">
+                <img src="../IMAGES/armaini1.jpg" alt="armani1">
+                </a>
+                <h3>ARMANI EXCHANGE</h3>
+              <P>Men | Outerbanks</P>  
+               <P> ₹9,995  </P>
+               <button type="button" onclick="window.location.href='armani1.html'">Buy</button>
+              </div>
+
+            <div class="brand" id="brand1">
+                <a href="armani2.html">
+                <img src="../IMAGES/armaini2.jpg" alt="armani2">
+                </a>
+                <h3>ARMANI EXCHANGE</h3>
+               <P>Men | Banks</P>
+               <p>₹17,495</p>
+               <button type="button" onclick="window.location.href='armani2.html'">Buy</button>
+            </div>
+        
+
+            <div class="brand" id="brand1">
+                <a href="armani3.html">
+                <img src="../IMAGES/armani3.jpg" alt="armani3">
+                </a>
+                <h3>ARMANI EXCHANGE</h3>
+                <p>Men | Hampton</p>
+                <P>₹ 17,495 </P>
+                <button type="button" onclick="window.location.href='armani3.html'">Buy</button>
+            </div>
+            <div class="brand" id="brand1">
+                <a href="armani4.html">
+                <img src="../IMAGES/armani4.jpg" alt="armani4">
+                </a>
+                </a>
+                <h3>ARMANI EXCHANGE</h3>
+                <p>Women | Brooke</p>
+                <P>₹ 12,495</P>
+                <button type="button" onclick="window.location.href='armani4.html'">Buy</button>
+            </div>
+            <div class="brand" id="brand1">
+                <a href="armani5.html">
+                <img src="../IMAGES/armani5.jpg" alt="armani5">
+                </a>
+                <h3>ARMANI EXCHANGE</h3>
+                <p> Women | Brooke</p>
+                <P>₹14,495 </P>
+                <button type="button" onclick="window.location.href='armani5.html'">Buy</button>
+            </div>
+           
+
+
+            <div class="brand" id="brand1">
+                <a href="armani6.html">
+                <img src="../IMAGES/armani6.jpg" alt="armani6">
+                </a>
+                <h3>ARMANI EXCHANGE</h3>
+                <p> Men | Hampton  </p>
+                <P>₹13,995 </P>
+                <button type="button" onclick="window.location.href='armani6.html'">Buy</button>
+            </div>
+
+            <div class="brand" id="brand1">
+                <a href="armani7.html">
+                <img src="../IMAGES/armani7.jpg" alt="armani7">
+                </a>
+                <h3>ARMANI EXCHANGE</h3>
+                <p>Women | Zoe</p>
+                   <P> ₹14,495</p>
+                    <button type="button" onclick="window.location.href='armani7.html'">Buy</button>
+            </div>
+            <div class="brand" id="brand1">
+                <a href="armani8.html">
+                <img src="../IMAGES/armani8.jpg" alt="armani8">
+                </a>
+                <h3>ARMANI EXCHANGE</h3>
+              <p> Men | Banks</p>
+                <P>₹17,495</p>
+                    <button type="button" onclick="window.location.href='armani8.html'">Buy</button>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <h2 style="text-align: center;">Watch Store</h2>
+        <p style="text-align: center;"> 2024 Watch Store. All rights reserved.</p>
+        <div class="quick-links">
+            <a href="../HTML/index.html">Home</a>
+            <a href="../HTML/about.html">About Us</a>
+            <a href="../HTML/contact.html">Contact</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+        </div>
+    </div>
+    <div style="margin-top: 30px;" class="footer-details">
+        <span style="margin-left: 100px;">Contact No:</strong> (+91) 9876543210</span>
+        <span style="margin-left: 80px;">|</span>
+        <span style="margin-left: 80px;"><strong>Location:</strong>&nbsp;  St. Xavier's College Ahmedabad, Navrangpura, Gujarat - 390009</span>
+        <span style="margin-left: 60px;">|</span>
+        <span style="margin-left: 80px;"><strong>Email:</strong> <a href="mailto:info@watchstore.com">info@watchstore.com</a></span>
+    </div>
+    <div style="margin-top: 30px;">
+        
+    </div>
+</footer>
+</body>
+</html>

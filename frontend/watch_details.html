@@ -1,0 +1,58 @@
+<?php
+// Sample data for watches
+$watches = [
+    'A1' => [
+        'name' => 'AMAZEFIT GTS 2 Mini Series',
+        'price' => '₹7,995',
+        'description' => 'Unisex | GTS 2 Mini Series',
+        'image' => 'A1.jpg'
+    ],
+    'A2' => [
+        'name' => 'AMAZEFIT GTS 4 Mini',
+        'price' => '₹7,999',
+        'description' => 'Unisex | GTS 4 Mini',
+        'image' => 'A2.jpg'
+    ],
+    // Add more watches as needed
+];
+
+// Get the watch ID from the query parameter
+$watch_id = $_GET['id'] ?? null;
+
+// Check if the watch ID is valid
+if ($watch_id && isset($watches[$watch_id])) {
+    $watch = $watches[$watch_id];
+} else {
+    // Redirect or show an error if the watch is not found
+    header('Location: index.php'); // Redirect to the main page
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $watch['name']; ?></title>
+    <link rel="stylesheet" href="brand.css">
+</head>
+<body>
+    <header>
+        <h1><?php echo $watch['name']; ?></h1>
+    </header>
+
+    <main>
+        <div class="watch-details">
+            <img src="<?php echo $watch['image']; ?>" alt="<?php echo $watch['name']; ?>" style="height: 300px;">
+            <h2><?php echo $watch['description']; ?></h2>
+            <p>Price: <?php echo $watch['price']; ?></p>
+            <button type="button">Buy Now</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Watch Brands. All rights reserved.</p>
+    </footer>
+</body>
+</html>

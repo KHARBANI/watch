@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <script src="../JAVA SCRIPT/test.js"></script>
+</head>
+<body>
+    <!--Navigation panel-->
+    <header>
+        <h1><a href="index.html">SRS WATCHSTORE</a></h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="dropdown">
+            <a>Shop</a>
+            <div class="dropdown-content">
+                <!--<a href="#men">Men</a>
+                <a href="#women">Women</a>
+                <a href="#sport">Sport</a>
+                <a href="#fashion">Fashion</a>-->
+                <a href="../frontend/brand.html">Brand</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a>Access</a>
+            <div class="dropdown-content">
+                <a onclick="openLoginPopup()">Login</a>
+                <a onclick="openRegisterPopup()">Register</a>
+            </div>
+        </div>
+    </nav>
+ 
+   <!-- Slide featured display -->
+   <section class="slider">
+    <div class="slides">
+        <div class="slide active">
+            <img src="../IMAGES/Featured_display(1).jpeg" alt="Featured Watch 1">
+            <div class="description">
+                <h3>Mugnier</h3>
+                <p>The Mugnier timepiece is a refined watch known for its elegance and meticulous craftsmanship, embodying timeless sophistication and precision.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="../IMAGES/Featured_display(2).jpeg" alt="Featured Watch 2">
+            <div class="description">
+                <h3>Omega Speedmaster</h3>
+                <p>The Omega Speedmaster is famous for its role in space exploration and is a symbol of innovation.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="../IMAGES/Featured_display(3).jpeg" alt="Featured Watch 3">
+            <div class="description">
+                <h3>Rolex</h3>
+                <p>The Rolex Submarine is known for its durability and precision.</p>
+            </div>
+        </div>
+    </div>
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</section>
+
+<!--Best Seller Section-->
+<section class="best-seller">
+    <h2>Best Sellers</h2>
+    <div class="best-seller-items">
+        <div class="item">
+            <img src="../IMAGES/aiagw266006w_1_1.jpg" alt="Best Seller Watch 1">
+            <h3>Aigner</h3>
+            <p>Price: $8,000</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="../IMAGES/A6.jpg" alt="Best Seller Watch 2">
+            <h3>Amazefit</h3>
+            <p>Price: $5,500</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="../IMAGES/armaini1.jpg" alt="Best Seller Watch 3">
+            <h3>Armani</h3>
+            <p>Price: $3,500</p>
+            <button class="buy-button" onclick="window.location.href='../frontend/armani1.html'">Buy Now</button>
+        </div>
+    </div>
+</section>
+
+<!--Popular Product Section-->
+<section class="popular-product">
+    <h2>Popular Products</h2>
+    <div class="popular-product-items">
+        <div class="item">
+            <img src="../IMAGES/armani6.jpg" alt="Popular Product Watch 3">
+            <h3>Armani</h3>
+            <p>Price: $300</p>
+            <button class="buy-button" onclick="window.location.href='../frontend/armani6.html'">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="../IMAGES/BALMAIN10.jpg" alt="Popular Product Watch 1">
+            <h3>Balmain</h3>
+            <p>Price: $12,000</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="../IMAGES/CASIO2.jpg" alt="Popular Product Watch 2">
+            <h3>Casio</h3>
+            <p>Price: $8,500</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+    </div>
+</section>
+
+<!--Our Brand Section-->
+<section class="our-brand">
+    <h2>Our Brands</h2>
+    <div class="brand-items">
+        <div class="brand-item">
+            <a href="../frontend/armani.html">
+                <img src="../IMAGES/armaniexchange-logo_1.jpg" alt="Armani Exchange Logo">
+            </a>
+         </div>
+        <div class="brand-item">
+            <a href="../frontend/aigner.html">
+                <img src="../IMAGES/aigner-logo.jpg" alt="Aigner Logo">
+            </a>
+        </div>
+        <div class="brand-item">
+            <a href="../frontend/AMAZEFIT.HTML">
+                <img src="../IMAGES/amazfit-logo.jpg" alt="Amazing-fit Logo">
+            </a>
+        </div>
+        <div class="brand-item">
+           <a href="../frontend/casio.html">
+                <img src="../IMAGES/casio-logo.jpg" alt="Casio Logo">
+           </a>
+        </div>
+        <div class="brand-item">
+            <a href="../frontend/balmain.html">
+                <img src="../IMAGES/balmain-logo.jpg" alt="Balmain Logo">
+            </a>
+         </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <h2 style="text-align: center;">Watch Store</h2>
+        <p style="text-align: center;"> 2024 Watch Store. All rights reserved.</p>
+        <div class="quick-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+        </div>
+    </div>
+    <div style="margin-top: 30px;" class="footer-details">
+        <span style="margin-left: 100px;">Contact No:</strong> (+91) 9876543210</span>
+        <span style="margin-left: 80px;">|</span>
+        <span style="margin-left: 80px;"><strong>Location:</strong>&nbsp;  St. Xavier's College Ahmedabad, Navrangpura, Gujarat - 390009</span>
+        <span style="margin-left: 60px;">|</span>
+        <span style="margin-left: 80px;"><strong>Email:</strong> <a href="mailto:info@watchstore.com">info@watchstore.com</a></span>
+    </div>
+    <div style="margin-top: 30px;">
+        
+    </div>
+</footer>
+
+<!-- Modern Login Popup Form -->
+<div id="loginPopup" class="login-popup">
+    <div class="login-content">
+        <h2>Welcome Back</h2>
+        <p>Login to your account</p>
+        <form action="../PHP/login.php" method="POST">
+            <div class="input-group">
+                <label for="loginEmailUnique">Email</label>
+                <input type="text" id="loginEmailUnique" name="email" placeholder="Enter your email" autocomplete="email">
+            </div>
+            <div class="input-group">
+                <label for="loginPasswordUnique">Password</label>
+                <input type="password" id="loginPasswordUnique" name="password" placeholder="Enter your password" autocomplete="current-password">
+            </div>
+            <p class="forgot-password-link"><a href="#forgot-password" onclick="openForgotPasswordPopup()">Forgot your password?</a></p>
+            <div class="button-group">
+                <button type="submit" class="login-btn">Login</button>
+                <button type="button" class="cancel-btn" onclick="closeLoginPopup()">Cancel</button>
+            </div>
+            <p class="signup-link">Don't have an account? <a href="#register" onclick="openRegisterPopup()">Register now</a></p>
+        </form>
+    </div>
+</div>
+
+<!-- Forgot Password Popup Form -->
+<div id="forgotPasswordPopup" class="forgot-password-popup">
+    <div class="forgot-password-content">
+        <h2>Forgot Password</h2>
+        <p>Please enter your email address to receive password recovery instructions.</p>
+        <form action="../PHP/forgot_password.php" method="POST">
+            <div class="input-group">
+                <label for="forgotPasswordEmail">Email</label>
+                <input type="text" id="forgotPasswordEmail" name="email" placeholder="Enter your email">
+            </div>
+            <div class="button-group">
+                <button class="submit-btn" onclick="openChangePasswordPopup()">Send Instructions</button>
+                <button type="button" class="cancel-btn" onclick="closeForgotPasswordPopup()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Change Password Popup Form -->
+<div id="changePasswordPopup" class="change-password-popup">
+    <div class="change-password-content">
+        <h2>Change Password</h2>
+        <form action="../PHP/forgot_password.php" method="POST">
+            <div class="input-group">
+                <label for="new-password">New Password:</label>
+                <input type="password" id="changePassword" name="password" placeholder="Enter your new password">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="text" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+            </div>
+            <div class="button-group">
+                <button type="submit" class="submit-btn">Send Instructions</button>
+                <button type="button" class="cancel-btn" onclick="closeForgotPasswordPopup()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Registration Popup Form -->
+<div id="registerPopup" class="register-popup">
+    <div class="register-content">
+        <h2>Register Now</h2>
+        <p>Create a new account</p>
+        <form action="../PHP/register.php" method="post">
+            <div class="input-group">
+                <label for="nameUnique">Name</label>
+                <input type="text" id="nameUnique" name="name" placeholder="Enter your Name" >
+            </div>
+            <div class="input-group">
+                <label for="registerEmailUnique">Email</label>
+                <input type="text" id="registerEmailUnique" name="email" placeholder="Enter your email"  autocomplete="email">
+            </div>
+            <div class="input-group">
+                <label for="phoneUnique">Phone Number</label>
+                <input type="tel" id="phoneUnique" name="phone" placeholder="Enter your phone number" >
+            </div>
+            <div class="input-group">
+                <label for="registerPasswordUnique">Password</label>
+                <input type="password" id="registerPasswordUnique" name="password" placeholder="Enter your password" autocomplete="new-password">
+            </div>
+            <div class="input-group">
+                <label for="registerConfirmPasswordUnique">Confirm Password</label>
+                <input type="password" id="registerConfirmPasswordUnique" name="confirmPassword" placeholder="Confirm your password"  autocomplete="new-password">
+            </div>
+            <div class="button-group">
+                <button type="submit" class="register-btn">Register</button>
+                <button type="button" class="cancel-btn" onclick="closeRegisterPopup()">Cancel</button>
+            </div>
+            <p class="signup-link">Already a registered user? <a href="#register" onclick="openLoginPopup()">Login now</a></p>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Modal for Adding a New Category -->
+<div id="addCategoryModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAddModal()">&times;</span>
+        <h3>Add New Category</h3>
+        <form id="addCategoryForm">
+            <label for="newCategoryName">Name:</label>
+            <input type="text" id="newCategoryName" required />
+            <label for="newCategoryDescription">Description:</label>
+            <textarea id="newCategoryDescription" required></textarea>
+            <button type="submit">Add Category</button>
+        </form>
+    </div>
+</div>
+</body>
+<script src="script.js"></script>
+</html>
