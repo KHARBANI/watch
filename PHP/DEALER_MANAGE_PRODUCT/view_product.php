@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
             p.Model_Name AS name, 
             c.Category_Name AS category, 
             p.Price AS price, 
-            s.Quantity_Available AS stock,
+            p.Stock_Quantity AS stock,
             i.Image_URL AS image,
             p.Product_Status AS status,
             p.Product_Description AS description,
@@ -21,8 +21,6 @@ if (isset($_GET['id'])) {
             product_table p
         JOIN 
             category_table c ON p.Category_ID = c.Category_ID
-        JOIN 
-            stock_table s ON p.Watch_ID = s.Watch_ID
         JOIN 
             image_table i ON p.Image_ID = i.Image_ID
         JOIN 

@@ -1,85 +1,16 @@
 <?php
-// Database connection
-require_once '../../PHP/db_connection.php';
-session_start();
-
-// Check if the user is logged in
-$isLoggedIn = isset($_SESSION['user_id']);
-$userName = $isLoggedIn ? $_SESSION['user_name'] : null;
-
-// Fetch top three best seller products based on highest sales, prioritizing the most recently purchased
-$sql = "SELECT p.Watch_ID, p.Model_Name, p.Price, i.Image_URL 
-        FROM product_table p 
-        JOIN image_table i ON p.Image_ID = i.Image_ID 
-        JOIN order_detail_table od ON p.Watch_ID = od.Watch_ID 
-        JOIN order_table o ON od.Order_ID = o.Order_ID 
-        GROUP BY p.Watch_ID 
-        ORDER BY SUM(od.Quantity) DESC, MAX(o.Order_Date) DESC, MAX(o.Order_Time) DESC 
-        LIMIT 3";
-$result = $conn->query($sql);
-
-// Fetch top three most recently added products
-$newArrivalsSql = "SELECT p.Watch_ID, p.Model_Name, p.Price, i.Image_URL 
-                   FROM product_table p 
-                   JOIN image_table i ON p.Image_ID = i.Image_ID 
-                   ORDER BY p.Created_At DESC 
-                   LIMIT 3";
-$newArrivalsResult = $conn->query($newArrivalsSql);
+session_start(); // Start the session
+$isLoggedIn = isset($_SESSION['user_id']); // Check if the user is logged in
+$userName = $isLoggedIn ? $_SESSION['user_name'] : null; // Get the user's name if logged in
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>About Us - Watch Store</title>
     <link rel="stylesheet" href="../../CSS/index.css">
     <style>
-        .new-arrivals {
-        background-color: #fff;
-        padding: 20px;
-        text-align: center;
-        }
-
-        .new-arrivals h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .new-arrivals-items {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .item {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px;
-            width: 30%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .item img {
-            max-width: 100%;
-            height: 500px;
-            border-radius: 5px;
-            object-fit: cover;
-            width: 400px;
-        }
-
-        .item h3 {
-            font-size: 1.5rem;
-            margin: 10px 0;
-        }
-
-        .item p {
-            font-size: 1.2rem;
-            color: #333;
-        }
-
         select#usertype {
             width: 100%;
             padding: 10px;
@@ -120,56 +51,10 @@ $newArrivalsResult = $conn->query($newArrivalsSql);
             cursor: not-allowed;
             box-shadow: none;
         }
-
-        #popupMessage {
-            position: fixed;
-            top: 200px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 20px 30px;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            display: none;
-            z-index: 1000;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 0.5s ease, fadeOut 0.5s ease 2.5s;
-        }
-
-        #popupMessage.success {
-            background: linear-gradient(90deg, #28a745, #218838);
-        }
-
-        #popupMessage.error {
-            background: linear-gradient(90deg, #dc3545, #c82333);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateX(-50%) translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
-            to {
-                opacity: 0;
-                transform: translateX(-50%) translateY(-20px);
-            }
-        }
     </style>
 </head>
 <body>
-    <!--Navigation panel-->
+    <!-- Navigation panel -->
     <header>
         <h1><a href="index.php">SRS WATCHSTORE</a></h1>
     </header>
@@ -194,121 +79,30 @@ $newArrivalsResult = $conn->query($newArrivalsSql);
             <?php else: ?>
                 <a>Access</a>
                 <div class="dropdown-content">
-                    <a onclick="openLoginPopup()">Login</a>
-                    <a onclick="openRegisterPopup()">Register</a>
+                    <a href="login.php">Login</a>
+                    <a href="register.php">Register</a>
                 </div>
             <?php endif; ?>
         </div>
     </nav>
 
-   <!-- Slide featured display -->
-   <section class="slider">
-    <div class="slides">
-        <div class="slide active">
-            <img src="../../IMAGES/Featured_display(1).jpeg" alt="Featured Watch 1">
-            <div class="description">
-                <h3>Mugnier</h3>
-                <p>The Mugnier timepiece is a refined watch known for its elegance and meticulous craftsmanship, embodying timeless sophistication and precision.</p>
-            </div>
-        </div>
-        <div class="slide">
-            <img src="../../IMAGES/Featured_display(2).jpeg" alt="Featured Watch 2">
-            <div class="description">
-                <h3>Omega Speedmaster</h3>
-                <p>The Omega Speedmaster is famous for its role in space exploration and is a symbol of innovation.</p>
-            </div>
-        </div>
-        <div class="slide">
-            <img src="../../IMAGES/Featured_display(3).jpeg" alt="Featured Watch 3">
-            <div class="description">
-                <h3>Rolex</h3>
-                <p>The Rolex Submarine is known for its durability and precision.</p>
-            </div>
-        </div>
+    <!-- About Section -->
+    <section class="about">
+        <h2 style="text-align: center;">About Us</h2>
+        <p style="margin-left: 100px; margin-right: 100px; text-align: justify; margin-top: 50px;">
+            At SRS Watchstore, we create watches that combine timeless design with exceptional quality.Our goal is 
+            to offer stylish and reliable timepieces that complement your individuality and fit seamlessly into your lifestyle.
+        </p>
+        <p style="margin-left: 100px; margin-right: 100px; text-align: justify; margin-bottom: 100px;">
+            Every watch in our collection is crafted with precision and care, ensuring a perfect blend of elegance 
+            and functionality. Whether you're dressing up for a special occasion or adding a touch of sophistication 
+            to your everyday look, SRS Watchstore has the perfect watch for you.
+            Discover the art of timekeeping with SRS Watchstore—where every moment matters.
+        </p>
+    </section>
+    <div style="margin-top: 190px;">
+        <pre> </pre>
     </div>
-    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-    <button class="next" onclick="changeSlide(1)">&#10095;</button>
-</section>
-
-<!--Best Seller Section-->
-<section class="best-seller">
-    <h2>Best Sellers</h2>
-    <div class="best-seller-items">
-        <?php
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                $imagePath = basename($row["Image_URL"]);
-                echo '<div class="item">';
-                echo '<a href="product_details.php?watch_id=' . $row["Watch_ID"] . '">'; // Redirect to product_details.php
-                echo '<img src="/uploads/' . $imagePath . '" alt="Best Seller Watch">';
-                echo '</a>';
-                echo '<h3>' . $row["Model_Name"] . '</h3>';
-                echo '<p>Price: ₹' . number_format($row["Price"], 2) . '</p>';
-                echo '<button class="buy-button" onclick="window.location.href=\'product_details.php?watch_id=' . $row["Watch_ID"] . '\'">Buy Now</button>';
-                echo '</div>';
-            }
-        } else {
-            echo "No best sellers available.";
-        }
-        ?>
-    </div>
-</section>
-
-<!--Popular Product Section-->
-<section class="new-arrivals">
-    <h2>New Arrivals</h2>
-    <div class="new-arrivals-items">
-        <?php
-        if ($newArrivalsResult->num_rows > 0) {
-            while($row = $newArrivalsResult->fetch_assoc()) {
-                $imagePath = basename($row["Image_URL"]);
-                echo '<div class="item">';
-                echo '<a href="product_details.php?watch_id=' . $row["Watch_ID"] . '">'; // Redirect to product_details.php
-                echo '<img src="/uploads/' . $imagePath . '" alt="New Arrival Watch">';
-                echo '</a>';
-                echo '<h3>' . $row["Model_Name"] . '</h3>';
-                echo '<p>Price: ₹' . number_format($row["Price"], 2) . '</p>';
-                echo '<button class="buy-button" onclick="window.location.href=\'product_details.php?watch_id=' . $row["Watch_ID"] . '\'">Buy Now</button>';
-                echo '</div>';
-            }
-        } else {
-            echo "No new arrivals available.";
-        }
-        ?>
-    </div>
-</section>
-
-<!--Our Brand Section-->
-<section class="our-brand">
-    <h2>Our Brands</h2>
-    <div class="brand-items">
-        <div class="brand-item">
-            <a href="../frontend/armani.html">
-                <img src="../../IMAGES/armaniexchange-logo_1.jpg" alt="Armani Exchange Logo">
-            </a>
-         </div>
-        <div class="brand-item">
-            <a href="../frontend/aigner.html">
-                <img src="../../IMAGES/aigner-logo.jpg" alt="Aigner Logo">
-            </a>
-        </div>
-        <div class="brand-item">
-            <a href="../frontend/AMAZEFIT.HTML">
-                <img src="../../IMAGES/amazfit-logo.jpg" alt="Amazing-fit Logo">
-            </a>
-        </div>
-        <div class="brand-item">
-           <a href="../frontend/casio.html">
-                <img src="../../IMAGES/casio-logo.jpg" alt="Casio Logo">
-           </a>
-        </div>
-        <div class="brand-item">
-            <a href="../frontend/balmain.html">
-                <img src="../../IMAGES/balmain-logo.jpg" alt="Balmain Logo">
-            </a>
-         </div>
-    </div>
-</section>
 
 <!-- Footer Section -->
 <footer>
@@ -335,6 +129,7 @@ $newArrivalsResult = $conn->query($newArrivalsSql);
     </div>
 </footer>
 
+<!-- Modern Login Popup Form -->
 <!-- Modern Login Popup Form -->
 <div id="loginPopup" class="login-popup">
     <div class="login-content">
@@ -415,7 +210,7 @@ $newArrivalsResult = $conn->query($newArrivalsSql);
     <div class="register-content">
         <h2>Register Now</h2>
         <p>Create a new account</p>
-        <form action="register.php" method="post">
+        <form action="../PHP/register.php" method="post">
             <div class="input-group">
                 <label for="nameUnique">Name</label>
                 <input type="text" id="nameUnique" name="name" placeholder="Enter your Name" autocomplete="name">
@@ -423,7 +218,7 @@ $newArrivalsResult = $conn->query($newArrivalsSql);
             </div>
             <div class="input-group">
                 <label for="registerEmailUnique">Email</label>
-                <input type="text" id="registerEmailUnique" name="email" placeholder="Enter your email" autocomplete="email">
+                <input type="text" id="registerEmailUnique" name="email" placeholder="Enter your email"  autocomplete="email">
                 <span id="registerEmailError" class="error-message"></span>
             </div>
             <div class="input-group">
@@ -433,7 +228,7 @@ $newArrivalsResult = $conn->query($newArrivalsSql);
             </div>
             <div class="input-group">
                 <label for="registerPasswordUnique">Password</label>
-                <input type="password" id="registerPasswordUnique" name="password" placeholder="Enter your password">
+                <input type="password" id="registerPasswordUnique" name="password" placeholder="Enter your password" >
                 <span id="registerPasswordError" class="error-message"></span>
             </div>
             <div class="input-group">
@@ -450,33 +245,6 @@ $newArrivalsResult = $conn->query($newArrivalsSql);
     </div>
 </div>
 
-<!-- Popup Message -->
-<div id="popupMessage" class="success"></div>
-
-<script>
-    // Function to show popup message
-    function showPopupMessage(message, type) {
-        const popup = document.getElementById('popupMessage');
-        popup.textContent = message;
-        popup.className = type === 'success' ? 'success' : 'error';
-        popup.style.display = 'block';
-
-        // Hide the popup after 3 seconds
-        setTimeout(() => {
-            popup.style.display = 'none';
-        }, 2000);
-    }
-
-    // Show welcome message based on login status
-    <?php if ($isLoggedIn): ?>
-        showPopupMessage('Welcome back, <?php echo htmlspecialchars($userName); ?>!', 'success');
-    <?php else: ?>
-        showPopupMessage('Welcome to SRS Watchstore! Please log in or register.', 'success');
-    <?php endif; ?>
-</script>
-
-<script src="../../JAVA SCRIPT/index.js"></script>    
+<script src="../../JAVA SCRIPT/index.js"></script>
 </body>
 </html>
-
-<!---last updated 12/10/2023-->

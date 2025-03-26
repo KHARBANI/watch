@@ -44,6 +44,7 @@ $strapMaterial = $_POST['strapMaterial'];
 $movementType = $_POST['movementType'];
 $productDescription = $_POST['productDescription'];
 $productStatus = 'Active'; // Set product status to Active by default
+$productStock = intval($_POST['productStock']); // Fetch stock quantity from POST data
 
 // Determine category ID based on brand name
 $categoryQuery = "SELECT Category_ID FROM category_table WHERE Category_Name = ?";
@@ -72,8 +73,8 @@ if ($productName && $image && $productPrice && $caseMaterial && $strapMaterial &
             $stmt->close();
 
             // Insert product into the product_table
-            $stmt = $conn->prepare("INSERT INTO product_table (Model_Name, Image_ID, Price, Category_ID, Case_ID, Strap_ID, Movement_ID, Product_Description, Product_Status, Dealer_ID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param('sdiississi', $productName, $imageId, $productPrice, $categoryId, $caseMaterial, $strapMaterial, $movementType, $productDescription, $productStatus, $dealer_id);
+            $stmt = $conn->prepare("INSERT INTO product_table (Model_Name, Image_ID, Price, Category_ID, Case_ID, Strap_ID, Movement_ID, Product_Description, Product_Status, Dealer_ID, Stock_Quantity) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param('sdiississii', $productName, $imageId, $productPrice, $categoryId, $caseMaterial, $strapMaterial, $movementType, $productDescription, $productStatus, $dealer_id, $productStock);
 
             if ($stmt->execute()) {
                 $response['success'] = true;

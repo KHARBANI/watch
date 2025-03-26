@@ -310,6 +310,7 @@ function editProduct(productId) {
             document.getElementById('editProductId').value = data.id;
             document.getElementById('editProductName').value = data.name;
             document.getElementById('editProductPrice').value = data.price;
+            document.getElementById('editProductStock').value = data.stock; // Ensure stock quantity is populated
             document.getElementById('editProductDescription').value = data.description;
 
             // Fetch and populate case materials

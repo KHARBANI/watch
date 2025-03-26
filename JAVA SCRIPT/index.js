@@ -289,3 +289,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ...existing code...
+
+    const form = document.querySelector('#yourFormId'); // Replace with the actual form ID
+    if (form) {
+        form.onsubmit = function (event) {
+            // Your form submission logic here
+            event.preventDefault();
+            console.log('Form submitted!');
+        };
+    } else {
+        console.error('Form with the specified ID not found in the DOM.');
+    }
+
+    // ...existing code...
+});

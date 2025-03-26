@@ -32,9 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                 // Redirect to dealer dashboard
                 echo "<script>window.location.href = '../../PHP/DEALER_DASHBOARD/dealer_dashboard.php';</script>";
             } else {
+                $_SESSION['user_id'] = $user['Customer_ID']; // Store customer ID in session
+                $_SESSION['user_name'] = $user['Name']; // Store customer name in session
                 echo "<script>showPopupMessage('Login successful!', 'success');</script>";
-                // Redirect to customer homepage
-                echo "<script>window.location.href = '/customer_homepage.php';</script>";
+                // Redirect to customer homepage (index.php)
+                echo "<script>window.location.href = 'index.php';</script>";
             }
         } else {
             // Authentication failed

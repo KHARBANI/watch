@@ -21,7 +21,7 @@ $query = "
         p.Model_Name AS name, 
         c.Category_Name AS category, 
         p.Price AS price, 
-        s.Quantity_Available AS stock,
+        p.Stock_Quantity AS stock, 
         i.Image_URL AS image,
         p.Product_Status AS status,
         p.Product_Description AS description,
@@ -32,8 +32,6 @@ $query = "
         product_table p
     JOIN 
         category_table c ON p.Category_ID = c.Category_ID
-    JOIN 
-        stock_table s ON p.Watch_ID = s.Watch_ID
     JOIN 
         image_table i ON p.Image_ID = i.Image_ID
     JOIN 
@@ -91,13 +89,7 @@ $result = $stmt->get_result();
     </header>
     <nav>
         <a href="../../PHP/DEALER_DASHBOARD/dealer_dashboard.php">Dashboard</a>
-        <div class="dropdown-setting">
-            <a>Product/Stock</a>
-            <div class="dropdown-content-setting">
-                <a href="../../PHP/DEALER_MANAGE_PRODUCT/dealer_manage_stock.php">Manage Stock</a>
-                <a href="../../PHP/DEALER_MANAGE_PRODUCT/dealer_manage_products.php">Manage Product</a>
-            </div>
-        </div>
+        <a href="../../PHP/DEALER_MANAGE_PRODUCT/dealer_manage_products.php">Manage Product</a>
         <a href="../../PHP/DEALER_VIEW_CATEGORY/dealer_view_categories.php">View Category</a>
         <a href="../../PHP/DEALER_MANAGE_ORDER/dealer_manage_orders.php">Manage Order</a>
         <a href="../../PHP/DEALER_VIEW_PAYMENT/dealer_view_payments.php">View Payment</a>
@@ -232,6 +224,8 @@ $result = $stmt->get_result();
                     <input type="text" id="newMovementTypeText" placeholder="Enter new movement type">
                     <button type="button" onclick="addNewMovementType()">Add</button>
                 </div>
+                <label for="productStock">Stock Quantity:</label>
+                <input type="number" id="productStock" name="productStock" required>
                 <label for="productDescription">Product Description:</label>
                 <textarea id="productDescription" name="productDescription" required></textarea>
                 <input type="hidden" name="productStatus" value="active">
@@ -271,6 +265,8 @@ $result = $stmt->get_result();
                     <!-- Options will be populated dynamically -->
                 </select>
                 <div id="newMovementTypeInput" style="display:none;"></div>
+                <label for="editProductStock">Stock Quantity:</label>
+                <input type="number" id="editProductStock" name="stockQuantity" required> <!-- Ensure this field exists -->
                 <label for="editProductDescription">Product Description:</label>
                 <textarea id="editProductDescription" name="productDescription" required></textarea>
                 <button type="submit" aria-label="Submit edited product">Save Changes</button>

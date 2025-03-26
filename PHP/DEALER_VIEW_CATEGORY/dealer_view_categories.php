@@ -29,13 +29,7 @@
     </header>
     <nav>
         <a href="../../PHP/DEALER_DASHBOARD/dealer_dashboard.php">Dashboard</a>
-        <div class="dropdown-setting">
-            <a>Product/Stock</a>
-            <div class="dropdown-content-setting">
-                <a href="../../PHP/DEALER_MANAGE_PRODUCT/dealer_manage_stock.php">Manage Stock</a>
-                <a href="../../PHP/DEALER_MANAGE_PRODUCT/dealer_manage_products.php">Manage Product</a>
-            </div>
-        </div>
+        <a href="../../PHP/DEALER_MANAGE_PRODUCT/dealer_manage_products.php">Manage Product</a>
         <a href="../../PHP/DEALER_VIEW_CATEGORY/dealer_view_categories.php">View Category</a>
         <a href="../../PHP/DEALER_MANAGE_ORDER/dealer_manage_orders.php">Manage Order</a>
         <a href="../../PHP/DEALER_VIEW_PAYMENT/dealer_view_payments.php">View Payment</a>
